@@ -22,7 +22,7 @@ public class Menu_Choosing : MonoBehaviour
 
     public void ExitToMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("Weapon");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }

@@ -11,6 +11,8 @@ public class Shooting_Counter : MonoBehaviour
     public Text textScore;
     public int HP;
     public Text textHP;
+    public bool boolHP;
+    public bool boolBullets;
 
     private void Start()
     {
@@ -20,8 +22,10 @@ public class Shooting_Counter : MonoBehaviour
     }
     void Update()
     {
-        textHP.text = $"HP: {HP}/20";
-        textBullets.text = $"Bullets Left: {counter_bullets}/10";
+        if (boolHP)
+            textHP.text = $"HP: {HP}/20";
+        if (boolBullets)
+            textBullets.text = $"Bullets Left: {counter_bullets}/10";
         textScore.text = $"Score: {counter_score}";
     }
 
