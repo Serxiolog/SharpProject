@@ -14,11 +14,20 @@ public class Enemy : MonoBehaviour
     public Shooting_Counter score;
 
     private int indexCurPoint = 0;
+    private int HP;
     public Animator animator;
     public float timeReloadAttack;
     private bool isReload = false;
+
+    private void Start()
+    {
+        HP = 1;
+    }
     private void Update()
     {
+        if (HP <= 0)
+            return;
+
         float distanceEnemyToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (distanceEnemyToPlayer < distanceDamage)
@@ -62,4 +71,16 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(timeReloadAttack);
         isReload = false;
     }
+
+    public void Damage(int hp)
+    {
+        animator.SetTrigger("Take Damage");
+        animator.SetBool("Walk Forward", false);
+        animator.SetBool("Run Forward", false);
+        animator.SetTrigger("Die");
+        Destroy(gameObject, 1.9f);
+        HP = 0;
+
+    }
+
 }

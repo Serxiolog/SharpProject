@@ -36,6 +36,11 @@ public class Weapon_without_bullets : MonoBehaviour
                         points.counter_score++;
                     }
 
+                    if (hit.transform.CompareTag("Enemy"))
+                    {
+                        hit.transform.GetComponent<Enemy>().Damage(20);
+                    }
+
                 }
                 points.counter_bullets--;
             }

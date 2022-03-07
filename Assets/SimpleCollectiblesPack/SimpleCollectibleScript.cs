@@ -17,9 +17,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	public GameObject collectEffect;
 
-	public FirstGame_Score point_first;
-
-	public Shooting_Counter point_second;
+	public Shooting_Counter point;
 	// Use this for initialization
 	void Start () {
 		
@@ -51,13 +49,13 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 		if (CollectibleType == CollectibleTypes.NoType) {}
 		if (CollectibleType == CollectibleTypes.Type1) {
-			point_first.counter_score += 10;
+			point.counter_score += 10;
 		}
 		if (CollectibleType == CollectibleTypes.Type2) {
-			point_first.counter_score += 5;
+			point.counter_score += 5;
 		}
 		if (CollectibleType == CollectibleTypes.Type3) {
-			point_first.counter_score += 20;
+			point.counter_score += 20;
 		}
 		if (CollectibleType == CollectibleTypes.Type4) {
 
@@ -67,7 +65,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 		}
 		if (CollectibleType == CollectibleTypes.Type5) {
 
-			point_second.counter_score += 10;
+			point.counter_score += 10;
 		}
 
 		Destroy (gameObject);

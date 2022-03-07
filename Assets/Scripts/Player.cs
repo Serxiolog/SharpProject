@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Camera _camera;
     public Transform weapon_transform;
     public Shooting_Counter points;
+    public Menu_Choosing menu;
 
     private float moveHight = 0;
     private float _rotationX = 0;
@@ -28,7 +29,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (points.HP <= 0)
+            menu.ExitToMenu();
 
         Vector3 vertical = transform.forward * Input.GetAxis("Vertical") * Speed;
         Vector3 horizontal = transform.right * Input.GetAxis("Horizontal") * Speed;
